@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`macro.test.ts unknown plugin 1. unknown plugin: 1. unknown plugin 1`] = `
+
+import { BrowserRouter, Routes } from 'react-router-dom';
+import FileBasedRouting from '../macro';
+
+const App = () => (
+  <BrowserRouter>
+      <FileBasedRouting path="./some/folder" />
+  </BrowserRouter>
+);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import foo from './dir/foo';
+import bar_baz from './dir/bar/baz';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+const App = () =>
+  /*#__PURE__*/ React.createElement(BrowserRouter, null, [
+    /*#__PURE__*/ React.createElement(Route, {
+      key: '0',
+      path: 'foo',
+      element: /*#__PURE__*/ React.createElement('foo', null),
+    }),
+    /*#__PURE__*/ React.createElement(Route, {
+      key: '1',
+      path: 'bar/baz',
+      element: /*#__PURE__*/ React.createElement('bar_baz', null),
+    }),
+  ]);
+
+
+`;
+
+exports[`macro.test.ts unknown plugin 2. unknown plugin: 2. unknown plugin 1`] = `
+
+import FileBasedRouting from '../macro';
+import { BrowserRouter, Routes } from 'react-router-dom';
+
+const App = () => React.createElement(BrowserRouter, null, React.createElement(FileBasedRouting, {
+  path: "./some/folder"
+}));
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import foo from './dir/foo';
+import bar_baz from './dir/bar/baz';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+const App = () =>
+  React.createElement(BrowserRouter, null, [
+    /*#__PURE__*/ React.createElement(Route, {
+      key: '0',
+      path: 'foo',
+      element: /*#__PURE__*/ React.createElement('foo', null),
+    }),
+    /*#__PURE__*/ React.createElement(Route, {
+      key: '1',
+      path: 'bar/baz',
+      element: /*#__PURE__*/ React.createElement('bar_baz', null),
+    }),
+  ]);
+
+
+`;
