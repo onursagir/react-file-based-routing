@@ -1,0 +1,6 @@
+{
+  "name": "@react-file-based-routing/react-router-dom.macro",
+  "private": true,
+  "main": "../dist/macro.js",
+  "types": "../dist/macro.d.ts"
+}
