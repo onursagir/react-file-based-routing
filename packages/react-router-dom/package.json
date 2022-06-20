@@ -1,0 +1,33 @@
+{
+  "name": "@react-file-based-routing/react-router-dom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist",
+  "scripts": {
+    "dev": "npm run build -- --watch",
+    "lint": "eslint --fix src/**",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "test": "jest --config ../../jest.config.ts",
+    "test:watch": "npm run test -- --watch",
+    "build": "rimraf dist && babel src --out-dir dist --extensions .js,.ts && cpy 'src/macro.d.ts' 'dist' --flat"
+  },
+  "keywords": [
+    "react",
+    "file",
+    "based",
+    "routing",
+    "react-router-dom"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fast-glob": "^3.2.11",
+    "remove": "^0.1.5"
+  },
+  "peerDependencies": {
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "cpy-cli": "^4.1.0"
+  }
+}

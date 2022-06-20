@@ -1,0 +1,4 @@
+{
+  "extends": "../../.babelrc",
+  "ignore": ["src/__tests__/**/*", "src/__stubs__/**/*", "src/**/macro.d.ts"]
+}
